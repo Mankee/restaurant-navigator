@@ -1,6 +1,6 @@
-## What is this?
+## Dang-thats-delicious
 
-Just you wait folks!
+A website where people can view and review stores. Store owners have the ability to add and edit info about their store.
 
 ## Sample Data
 
@@ -23,5 +23,3 @@ That will populate 16 stores with 3 authors and 41 reviews. The logins for the a
 |Wes Bos|wes@example.com|wes|
 |Debbie Downer|debbie@example.com|debbie|
 |Beau|beau@example.com|beau|
-
-
