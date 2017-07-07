@@ -25,6 +25,8 @@ router.get('/tags/:tag', catchErrors(storeController.getStoresByTag));
 
 router.get('/map', storeController.mapPage);
 
+router.get('/hearts', authController.isLoggedIn, catchErrors(storeController.getHearts));
+
 // login and registration
 router.get('/register', userController.registerForm);
 router.get('/login', userController.loginForm);
