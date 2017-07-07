@@ -23,6 +23,8 @@ router.get('/store/:slug', catchErrors(storeController.getStoreBySlug));
 router.get('/tags', catchErrors(storeController.getStoresByTag));
 router.get('/tags/:tag', catchErrors(storeController.getStoresByTag));
 
+router.get('/map', storeController.mapPage);
+
 // login and registration
 router.get('/register', userController.registerForm);
 router.get('/login', userController.loginForm);
