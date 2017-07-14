@@ -1,3 +1,7 @@
 node_modules
 variables.env
 .DS_store
+*.log
+.idea
+haters/
+variables.env.now
