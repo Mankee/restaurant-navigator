@@ -7,7 +7,7 @@ if (major <= 7 && minor <= 5) {
   process.exit();
 }
 
-require('dotenv').config({ path: 'variables.env' });
+require('dotenv').config({ path: 'dev.env' });
 
 mongoose.connect(process.env.DATABASE);
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
