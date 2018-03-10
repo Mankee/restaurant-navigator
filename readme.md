@@ -1,4 +1,4 @@
-## Dang-thats-delicious
+## restaurant-navigator
 
 A website where people can view and review stores. Store owners have the ability to add and edit info about their store.
 
