@@ -27,17 +27,23 @@ exports.addStore = (req, res) => {
 
 exports.upload = multer(multerOptions).single('photo');
 
-exports.resize = async (req, res, next) => {
+exports.resize = (req, res, next) => {
+  const extension = req.file.mimetype.split('/')[1];
+  req.body.photo = `${uuid.v4()}.${extension}`;
+
   if (!req.file) {
     next();
     return;
   }
-  const extension = req.file.mimetype.split('/')[1];
-  req.body.photo = `${uuid.v4()}.${extension}`;
-  const photo = await jimp.read(req.file.buffer);
-  await photo.resize(800, jimp.AUTO);
-  await photo.write(`./public/uploads/${req.body.photo}`);
-  next();
+
+  return jimp.read(req.file.buffer)
+    .then(photo => {
+      return photo
+        .resize(800, jimp.AUTO)
+        .write(`./public/uploads/${req.body.photo}`);
+    })
+    .then(() => next())
+    .catch(next);
 };
 
 exports.createStore = async (req, res) => {
