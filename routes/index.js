@@ -12,7 +12,7 @@ router.get('/stores/page/:page', catchErrors(storeController.getStores));
 router.get('/add', authController.isLoggedIn, storeController.addStore);
 router.post('/add', 
   storeController.upload, 
-  catchErrors(storeController.resize), 
+  storeController.resize, 
   catchErrors(storeController.createStore)
 );
 router.post('/add/:id', 
